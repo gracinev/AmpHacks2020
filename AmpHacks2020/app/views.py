@@ -75,6 +75,7 @@ def form(request):
         cost = request.POST.get("cost_field")
         units = request.POST.get("units_field")
 
+    print(date)
 
     return render(
         request,
