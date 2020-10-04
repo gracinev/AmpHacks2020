@@ -1,0 +1,52 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="statsRect">
+            <div class="row">
+                <p class="statsTitle">Financial Analysis</p>
+                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+            </div>
+            <div style="margin-top: 20px" class="row">
+                <p class="statsTitle">Financial Analysis</p>
+                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+            </div>
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',// bar, horizontalBar, pie, line, doughnut, radar, polarArea
+
+            data: {
+                labels: {{labels|safe}},
+                datasets: [{
+                    label: "Revenue",
+                    borderColor: "#005DAA",
+                    data: {{data|safe}},
+                    backgroundColor: "#FFD200"
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Financial Health',
+                },
+                legend: {
+                    disblay: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000'
+                    }
+                }
+
+            }
+
+
+        });
+
+    </script>
+
+{% endblock %}
