@@ -18,3 +18,6 @@ class StoreData(models.Model):
     staff_salary = models.FloatField
     sell_cost = models.FloatField
     num_sold = models.IntegerField
+
+    def __str__(self):
+        return self.revenue
