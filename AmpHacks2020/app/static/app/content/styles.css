@@ -1,0 +1,14 @@
+.logo {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 45px;
+    /* identical to box height */
+    color: #005DAA;
+    margin-left: 166px;
+}
+
+body {
+    background: #E8F8FD;
+}

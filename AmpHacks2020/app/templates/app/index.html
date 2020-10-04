@@ -1,33 +1,270 @@
-{% extends "app/layout.html" %}
+﻿{% extends "app/layout.html" %}
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Django</h1>
-    <p class="lead">Django is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+<style>
+    .homeTitle {
+        position: absolute;
+        width: 519px;
+        height: 150px;
+        left: 165px;
+        top: 277px;
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Django gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://djangobook.com/django-tutorials/">Learn more &raquo;</a></p>
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 75px;
+
+        color: #005DAA;
+    }
+
+    .yellowTitle {
+        color: #FFD200;
+    }
+
+    .titleText {
+        position: absolute;
+        width: 518px;
+        height: 48px;
+        left: 165px;
+        top: 427px;
+        margin-top: 20px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: #005DAA;
+
+    }
+
+    .yellowBtn {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 15px 0px 0px 35px;
+
+        position: absolute;
+        width: 161px;
+        height: 51px;
+        left: 165px;
+        top: 502px;
+        margin-top: 20px;
+
+        background: #FFD200;
+        border-radius: 10px;
+        color: #FFFFFF;
+    }
+
+    .secondaryHomeTitle {
+        
+        width: 424px;
+        height: 120px;
+        height: 120px;
+        margin: 0 auto;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+
+        /* blue */
+
+        color: #005DAA;
+    }
+
+    .secondaryHomeText {
+        width: 219px;
+        height: 55px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+
+        color: #393E43;
+    }
+
+    #person {
+        display: block;
+        margin: auto;
+    }
+
+    .secondaryHomeDiv {
+        margin-top: 163px;
+        margin-bottom: 75px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondaryHomeBtn {
+        margin-top: 20px;
+        color: #ffffff;
+padding: 15px 0px 0px 35px;
+width: 161px;
+height: 51px;
+left: 641px;
+top: 1121px;
+
+/* yellow */
+
+background: #FFD200;
+border-radius: 10px;
+    }
+
+    .blueTitleText {
+height: 30px;
+left: 145.54px;
+top: 40px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height */
+
+
+/* blue */
+
+color: #005DAA;
+    }
+
+    .blueText {
+width: 388px;
+height: 41px;
+left: 144.54px;
+top: 74px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #393E43;
+    }
+
+    .svgOuterRectangle {
+        display: flex;
+flex-direction: row;
+align-items: center;
+justify-items: center;
+width: 585.07px;
+height: 155px;
+
+background: #FFFFFF;
+box-shadow: 0px 20px 30px rgba(14, 36, 58, 0.1);
+border-radius: 10px;
+    }
+
+    .divHorizontalCenter {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #linesAndDotsSvg {
+        position: absolute;
+left: 42.36%;
+right: 12.04%;
+top: 35.22%;
+bottom: 48.66%;
+
+opacity: 0.25;
+transform: rotate(90deg);
+    }
+
+    #dotsSvg {
+        position: absolute;
+width: 110px;
+height: 162px;
+left: 1163px;
+top: 1239px;
+    }
+</style>
+
+<div>
+<p class="homeTitle">Forcast your <span class="yellowTitle">business future</span> now</p>
+<p class="titleText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringill</p>
+<a class="yellowBtn">Some button</a>
+
+{% load static %}
+<img id="person" src="{% static "app/assets/illustration.svg"%}" />
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.org/">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
+<div class="secondaryHomeDiv">
+    <p class="secondaryHomeTitle">Some catchy phrase here <span class="yellowTitle">i</span> guess!</p>
+    <p class="secondaryHomeText">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+    <a class="secondaryHomeBtn">Some Button</a>
 </div>
+<div style="background-color: #ffffff; width: 100%">
+    <div class="row">
+        <div style="position: absolute" class="col-4">
+        <img id="linesAndDotsSvg" src="{% static "app/assets/linesanddots.svg"%}" />
+        </div>
+        <div class="col-4">
+   <div style="margin-bottom: 30px" class="row">
+            <div class="divHorizontalCenter col-md-12">
+                <div class="svgOuterRectangle row">
+                    <div class="col-md-2"> 
+                        <div class="svgRectangle">
+                            <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.5143 4.68575V7.3643C26.5143 9.72481 20.6355 11.65 13.3893 11.65C6.14323 11.65 0.264343 9.72481 0.264343 7.3643V4.68575C0.264343 2.32524 6.14323 0.400024 13.3893 0.400024C20.6355 0.400024 26.5143 2.32524 26.5143 4.68575ZM26.5143 10.7125V16.7393C26.5143 19.0998 20.6355 21.025 13.3893 21.025C6.14323 21.025 0.264343 19.0998 0.264343 16.7393V10.7125C3.08417 12.6545 8.24528 13.5585 13.3893 13.5585C18.5334 13.5585 23.6945 12.6545 26.5143 10.7125ZM26.5143 20.0875V26.1143C26.5143 28.4748 20.6355 30.4 13.3893 30.4C6.14323 30.4 0.264343 28.4748 0.264343 26.1143V20.0875C3.08417 22.0295 8.24528 22.9335 13.3893 22.9335C18.5334 22.9335 23.6945 22.0295 26.5143 20.0875Z" fill="#FFD200"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                         <p class="blueTitleText">Financial Standing</p>
+                        <p class="blueText">Biz məlumatların statistik təhlili üzrə sizlərə professional biznes xidmətlərimizi təklif edirik</p>
+                    </div>
+                </div>
+            </div>
+        <div class="divHorizontalCenter col-md-12">
+                <div class="svgOuterRectangle row">
+                    <div class="col-md-2"> 
+                        <div class="svgRectangle">
+                            <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.5143 4.68575V7.3643C26.5143 9.72481 20.6355 11.65 13.3893 11.65C6.14323 11.65 0.264343 9.72481 0.264343 7.3643V4.68575C0.264343 2.32524 6.14323 0.400024 13.3893 0.400024C20.6355 0.400024 26.5143 2.32524 26.5143 4.68575ZM26.5143 10.7125V16.7393C26.5143 19.0998 20.6355 21.025 13.3893 21.025C6.14323 21.025 0.264343 19.0998 0.264343 16.7393V10.7125C3.08417 12.6545 8.24528 13.5585 13.3893 13.5585C18.5334 13.5585 23.6945 12.6545 26.5143 10.7125ZM26.5143 20.0875V26.1143C26.5143 28.4748 20.6355 30.4 13.3893 30.4C6.14323 30.4 0.264343 28.4748 0.264343 26.1143V20.0875C3.08417 22.0295 8.24528 22.9335 13.3893 22.9335C18.5334 22.9335 23.6945 22.0295 26.5143 20.0875Z" fill="#FFD200"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                         <p class="blueTitleText">Data Analysis</p>
+                        <p class="blueText">Biz məlumatların statistik təhlili üzrə sizlərə professional biznes xidmətlərimizi təklif edirik</p>
+                    </div>
+                </div>
+            </div>
+        <div class="divHorizontalCenter col-md-12">
+                <div class="svgOuterRectangle row">
+                    <div class="col-md-2"> 
+                        <div class="svgRectangle">
+                            <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.5143 4.68575V7.3643C26.5143 9.72481 20.6355 11.65 13.3893 11.65C6.14323 11.65 0.264343 9.72481 0.264343 7.3643V4.68575C0.264343 2.32524 6.14323 0.400024 13.3893 0.400024C20.6355 0.400024 26.5143 2.32524 26.5143 4.68575ZM26.5143 10.7125V16.7393C26.5143 19.0998 20.6355 21.025 13.3893 21.025C6.14323 21.025 0.264343 19.0998 0.264343 16.7393V10.7125C3.08417 12.6545 8.24528 13.5585 13.3893 13.5585C18.5334 13.5585 23.6945 12.6545 26.5143 10.7125ZM26.5143 20.0875V26.1143C26.5143 28.4748 20.6355 30.4 13.3893 30.4C6.14323 30.4 0.264343 28.4748 0.264343 26.1143V20.0875C3.08417 22.0295 8.24528 22.9335 13.3893 22.9335C18.5334 22.9335 23.6945 22.0295 26.5143 20.0875Z" fill="#FFD200"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                         <p class="blueTitleText">Financial Forcasting</p>
+                        <p class="blueText">Biz məlumatların statistik təhlili üzrə sizlərə professional biznes xidmətlərimizi təklif edirik</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+        <div class="col-4">
+            askdjakdjaksj
+    </div>
+    </div>
+    </div>
 
 {% endblock %}
