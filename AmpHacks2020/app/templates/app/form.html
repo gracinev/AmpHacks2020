@@ -10,12 +10,13 @@ height: 1037px;
 left: 157px;
 top: 158px;
 
-/*background: #FFFFFF;
+background: #FFFFFF;
 border-radius: 30px;
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center;*/
+align-items: center;
+z-index: 1;
     }
 
     .formText {
@@ -92,8 +93,8 @@ z-index: -5;
         <img id="pattern1" src="{% static 'app/assets/pattern1.svg' %}" />
         <img id="pattern2" src="{% static 'app/assets/pattern2.svg' %}" />
     </div>
-    <div class="formDiv col-10">
-        <form  style="padding: 80px;" action="" id = "post-form" method="POST">
+    <div class="col-10 formDiv">
+        <form style="padding: 80px; z-index: 2" action="" id = "post-form" method="POST">
         {% csrf_token %}
             <div class="form-group">
                 <label class="formText">Revenue</label>
