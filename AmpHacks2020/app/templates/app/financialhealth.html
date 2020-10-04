@@ -1,37 +1,82 @@
 ﻿{% extends "app/layout.html" %}
 
 {% block content %}
+    <style>
+        .statsRect {
+            margin-top: 128px;
+width: 1000px;
+height: 314px;
+left: 227px;
+top: 631px;
 
-<!DOCTYPE html>
+background: #FFFFFF;
+border-radius: 20px;
+        }
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    <title>Geschlechtsverteilung Patientendaten </title>
-</head>
-<body>
+        .statsTitle {
+width: 200px;
+height: 26px;
+left: 268px;
+top: 668px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+padding-top: 40px;
+margin: 0px 40px;
+color: #31456A;
+        }
+
+        .statsText {
+width: 900px;
+height: 48px;
+padding-top: 40px;
+margin-left: 40px;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+
+color: #005DAA;
+
+        }
+    </style>
+
     <div class="container">
         <canvas id="myChart"></canvas>
+        <div class="statsRect">
+            <div class="row">
+                <p class="statsTitle">Financial Analysis</p>
+                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+            </div>
+            <div style="margin-top: 20px" class="row">
+                <p class="statsTitle">Financial Analysis</p>
+                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+            </div>
+        </div>
     </div>
 
     <script>
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',// bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            type: 'line',// bar, horizontalBar, pie, line, doughnut, radar, polarArea
 
             data: {
                 labels: {{labels|safe}},
                 datasets: [{
+                    label: "Revenue",
+                    borderColor: "#005DAA",
                     data: {{data|safe}},
-                    backgroundColor: {{colors|safe}}
+                    backgroundColor: "#FFD200"
                 }]
             },
             options: {
                 title: {
                     display: true,
-                    text: 'Geschlechtsverteilung Patientendaten',
+                    text: 'Financial Health',
                 },
                 legend: {
                     disblay: true,
@@ -47,7 +92,5 @@
         });
 
     </script>
-</body>
-</html>
 
 {% endblock %}
