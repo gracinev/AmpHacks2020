@@ -1,8 +1,8 @@
-#import matplotlib.pyplot as plt
-#import requests
-#import numpy as np
-#import pandas as pd
-#import sys
+import matplotlib.pyplot as plt
+import requests
+import numpy as np
+import pandas as pd
+import sys
 
 
 def profit(revenue, cost):
@@ -56,13 +56,13 @@ def predict_rev(revenue, date):
     df_forecast = df_forecast.append(df2, ignore_index=True)
 
     prediction = moving_avg(df_forecast['new_amount'], 20)[-1]
-
-    weather_forecast = weather()
-
-    if weather_forecast == 'cold':
-        prediction = prediction * 0.66
-    elif weather_forecast == 'hot':
-        prediction = prediction * 1.15
+    #
+    # weather_forecast = weather()
+    #
+    # if weather_forecast == 'cold':
+    #     prediction = prediction * 0.66
+    # elif weather_forecast == 'hot':
+    #     prediction = prediction * 1.15
 
     return prediction
 

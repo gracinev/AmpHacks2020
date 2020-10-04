@@ -94,7 +94,7 @@ z-index: -5;
         <img id="pattern2" src="{% static 'app/assets/pattern2.svg' %}" />
     </div>
     <div class="col-10 formDiv">
-        <form style="padding: 80px; z-index: 2" action="" id = "post-form" method="POST">
+        <form style="padding: 80px; z-index: 2" action="{% url 'results' %}" id = "post-form" method="POST">
         {% csrf_token %}
             <div class="form-group">
                 <label class="formText">Revenue</label>
@@ -103,6 +103,10 @@ z-index: -5;
             <div class="form-group">
                 <label class="formText">Date</label>
                 <input type="date" class="formInput form-control" name="date_field"/>
+            </div>
+            <div class="form-group">
+                <label class="formText">Number of Staff</label>
+                <input type="number" class="formInput form-control" name="staff_field"/>
             </div>
             <div class="form-group">
                 <label class="formText">Staff Hours</label>
