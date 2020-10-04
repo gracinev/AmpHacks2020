@@ -55,3 +55,16 @@ def signup(request):
             'year':datetime.now().year,
         }
     )
+
+def form(request):
+    """Renders the sign up page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/form.html',
+        {
+            'title':'Form',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )
