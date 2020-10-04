@@ -59,6 +59,10 @@ def signup(request):
 def form(request):
     """Renders the sign up page."""
     assert isinstance(request, HttpRequest)
+
+    if request.method == 'POST':
+        pass
+
     return render(
         request,
         'app/form.html',
@@ -68,6 +72,9 @@ def form(request):
             'year':datetime.now().year,
         }
     )
+
+
+
 def financialhealth(request):
     return render(
         request,

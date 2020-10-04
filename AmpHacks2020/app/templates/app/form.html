@@ -89,8 +89,8 @@ z-index: -5;
 <div class="row">
     <div class="col-1">
         {% load static %}
-        <img id="pattern1" src="{% static "app/assets/pattern1.svg"%}" />
-        <img id="pattern2" src="{% static "app/assets/pattern2.svg"%}" />
+        <img id="pattern1" src="{% static 'app/assets/pattern1.svg' %}" />
+        <img id="pattern2" src="{% static 'app/assets/pattern2.svg' %}" />
     </div>
     <div class="formDiv col-10">
         <form style="padding: 80px;">
@@ -114,9 +114,9 @@ z-index: -5;
                         <label class="formText">Revenue</label>
                         <input class="formInput form-control" />
                  </div>
-            <a id="getStartedBtn">
-                Get Started For Free
-            </a>
+            <button type="submit" id="getStartedBtn">
+                Get Started
+            </button>
             </form>
     </div>
     <div class="col-1">
