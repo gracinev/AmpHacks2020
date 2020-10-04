@@ -98,27 +98,27 @@ z-index: -5;
         {% csrf_token %}
             <div class="form-group">
                 <label class="formText">Revenue</label>
-                <input type="number" class="formInput form-control" id="revenue_field" />
+                <input type="number" class="formInput form-control" name="revenue_field" />
             </div>
             <div class="form-group">
                 <label class="formText">Date</label>
-                <input type="date" class="formInput form-control" id="date_field"/>
+                <input type="date" class="formInput form-control" name="date_field"/>
             </div>
             <div class="form-group">
                 <label class="formText">Staff Hours</label>
-                <input type="number" class="formInput form-control" id="hours_field"/>
+                <input type="number" class="formInput form-control" name="hours_field"/>
             </div>
             <div class="form-group">
                 <label class="formText">Hourly Salary</label>
-                <input type="number" class="formInput form-control" id="salary_field"/>
+                <input type="number" class="formInput form-control" name="salary_field"/>
             </div>
             <div class="form-group">
                 <label class="formText">Per Unit Cost</label>
-                <input type="number" class="formInput form-control" id="cost_field"/>
+                <input type="number" class="formInput form-control" name="cost_field"/>
             </div>
             <div class="form-group">
                 <label class="formText">Units Sold</label>
-                <input type="number" class="formInput form-control" id="units_field"/>
+                <input type="number" class="formInput form-control" name="units_field"/>
             </div>
             <button type="submit" id="getStartedBtn">
                 Get Started
