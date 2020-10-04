@@ -13,34 +13,34 @@
         {% csrf_token %}
             <div class="form-group">
                 <label class="formText">Revenue</label>
-                <input type="number" class="formInput form-control" name="revenue_field" />
+                <input type="number" class="formInput form-control" name="revenue_field" required/>
             </div>
             <div class="form-group">
                 <label class="formText">Date</label>
-                <input type="date" class="formInput form-control" name="date_field"/>
+                <input type="date" class="formInput form-control" name="date_field" required/>
             </div>
             <div class="form-group">
                 <label class="formText">Number of Staff</label>
-                <input type="number" class="formInput form-control" name="staff_field"/>
+                <input type="number" class="formInput form-control" name="staff_field" required/>
             </div>
             <div class="form-group">
                 <label class="formText">Staff Hours</label>
-                <input type="number" class="formInput form-control" name="hours_field"/>
+                <input type="number" class="formInput form-control" name="hours_field" required/>
             </div>
             <div class="form-group">
                 <label class="formText">Hourly Salary</label>
-                <input type="number" class="formInput form-control" name="salary_field"/>
+                <input type="number" class="formInput form-control" name="salary_field" required/>
             </div>
             <div class="form-group">
                 <label class="formText">Per Unit Cost</label>
-                <input type="number" class="formInput form-control" name="cost_field"/>
+                <input type="number" class="formInput form-control" name="cost_field" required/>
             </div>
             <div class="form-group">
                 <label class="formText">Units Sold</label>
-                <input type="number" class="formInput form-control" name="units_field"/>
+                <input type="number" class="formInput form-control" name="units_field" required/>
             </div>
             <button type="submit" id="getStartedBtn">
-                Get Started
+                Calculate
             </button>
             </form>
     </div>
