@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-#import pandas as pd
+import pandas as pd
 import math
 from . import script
 
@@ -92,7 +92,7 @@ def form(request):
             days_left = math.ceil(5000/abs(profit))
             return render(
                 request,
-                'app/form.html',
+                'app/results.html',
                 {
                     
                     'title': 'Financial Health',
