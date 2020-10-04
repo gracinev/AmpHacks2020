@@ -6,6 +6,8 @@ from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
 
+from .forms import DataForm
+
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -57,14 +59,7 @@ def signup(request):
     )
 
 def form(request):
-    """Renders the sign up page."""
     assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/form.html',
-        {
-            'title':'Form',
-            'message':'Your application description page.',
-            'year':datetime.now().year,
-        }
-    )
+    form_class = DataForm()
+    dataform = DataForm()
+    return render(request, 'app/form.html', {'form': dataform, })

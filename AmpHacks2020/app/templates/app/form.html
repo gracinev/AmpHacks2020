@@ -2,9 +2,53 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<h2>Input you values here</h2>
+<!--<h3>{{ message }}</h3>-->
 
-<p>Use this area to provide additional information.</p>
+<div class="container pt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+        <form action="" id="post-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="Revenue">Revenue</label>
+                <input type="number" class="form-control" id="Revenue" placeholder="Revenue Field" required>
+            </div>
+            <div class="form-group">
+                <label for="Cost">Cost</label>
+                <input type="number" class="form-control" id="Cost" placeholder="Revenue Field" required>
+            </div>
+            <div class="form-group">
+                <label for="Lease">Lease</label>
+                <input type="number" class="form-control" id="Lease" placeholder="Revenue Field" required>
+            </div>
+            <div class="form-group">
+                <label for="Utilities">Utilities</label>
+                <input type="number" class="form-control" id="Utilities" placeholder="Revenue Field" required>
+            </div>
+            <div class="form-group">
+                <label for="Product">Product</label>
+                <input type="number" class="form-control" id="Product" placeholder="Revenue Field" required>
+            </div>
+            <div class="form-group">
+                <label for="Assets">Assets</label>
+                <input type="number" class="form-control" id="Assets" placeholder="Revenue Field" required>
+            </div>
+            <button type="submit" value="Submit" class="btn btn-primary">Analyze</button>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<body>-->
+<!--<div class="form-group">-->
+<!--    {{ form.as_p }}-->
+<!--    <button>click here </button>-->
+<!--</div>-->
+<!--</body>-->
+
 
 {% endblock %}
