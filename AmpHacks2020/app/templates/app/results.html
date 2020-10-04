@@ -5,7 +5,7 @@
 <h2>{{ status }} {{ profit }}</h2>
 <h3>{{ message }}</h3>
 
-<p> filling some paragraph text </p>
+<p>  </p>
 <style>
         .statsRect {
             margin-top: 128px;
@@ -19,8 +19,7 @@ border-radius: 20px;
         }
 
         .statsTitle {
-width: 200px;
-height: 26px;
+line-height: 30px;
 left: 268px;
 top: 668px;
 
@@ -54,12 +53,8 @@ color: #005DAA;
         <canvas id="myChart"></canvas>
         <div class="statsRect">
             <div class="row">
-                <p class="statsTitle">Financial Analysis</p>
-                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
-            </div>
-            <div style="margin-top: 20px" class="row">
-                <p class="statsTitle">Financial Analysis</p>
-                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+                <p class="statsTitle">{{ recommendation }}</p>
+                <p class="statsText"> {{ recc_message }} </p>
             </div>
         </div>
     </div>

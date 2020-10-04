@@ -99,7 +99,8 @@ def form(request):
                     'status': 'Projected daily loss:',
                     'profit': '${}'.format(abs(profit)),
                     'message': 'You are projected to make a loss. At current rates, your business can only operate for {} more days.'.format(days_left),
-                    'recommendation': '',
+                    'recommendation': 'Modify your hours of operation.',
+                    'recc_message': 'Customers do not come frequently before 1pm - you can open in the afternoon.',
                     'labels': ['12/4/2016', '12/5/2016', '12/5/2016', '12/7/2016', '12/8/2016', '12/9/2016',
                                '12/10/2016', '12/11/2016', '12/12/2016', '12/13/2016'],
                     'data': [1151.1151, 1117.4534, 1117.4534, 1161.706138, 1210.953996, 1185.783088, 1131.525112,
@@ -109,12 +110,19 @@ def form(request):
 
         return render(
             request,
-            'app/form.html',
+            'app/results.html',
             {
                 'title': 'Financial Health',
                 'status': 'Projected daily profit:',
                 'profit': '${}'.format(abs(profit)),
-                'message': 'You are projected to continue making profits.'
+                'message': 'You are projected to continue making profits.',
+                'recommendation': 'Change your product mix.',
+                'recc_message': 'Winter is fast approaching - your customers historically prefer coffee over hot chocolate.',
+                'labels': ['12/4/2016', '12/5/2016', '12/5/2016', '12/7/2016', '12/8/2016', '12/9/2016',
+                          '12/10/2016', '12/11/2016', '12/12/2016', '12/13/2016'],
+                         'data': [1151.1151, 1117.4534, 1117.4534, 1161.706138, 1210.953996, 1185.783088,
+                                  1131.525112,
+                                  1122.15256, 1522.685036, 1269.59994],
             }
         )
 
