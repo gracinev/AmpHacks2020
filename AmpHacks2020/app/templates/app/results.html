@@ -6,5 +6,96 @@
 <h3>{{ message }}</h3>
 
 <p> filling some paragraph text </p>
+<style>
+        .statsRect {
+            margin-top: 128px;
+width: 1000px;
+height: 314px;
+left: 227px;
+top: 631px;
+
+background: #FFFFFF;
+border-radius: 20px;
+        }
+
+        .statsTitle {
+width: 200px;
+height: 26px;
+left: 268px;
+top: 668px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+padding-top: 40px;
+margin: 0px 40px;
+color: #31456A;
+        }
+
+        .statsText {
+width: 900px;
+height: 48px;
+padding-top: 40px;
+margin-left: 40px;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+
+color: #005DAA;
+
+        }
+   </style>
+
+    <div class="container">
+        <canvas id="myChart"></canvas>
+        <div class="statsRect">
+            <div class="row">
+                <p class="statsTitle">Financial Analysis</p>
+                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+            </div>
+            <div style="margin-top: 20px" class="row">
+                <p class="statsTitle">Financial Analysis</p>
+                <p class="statsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',// bar, horizontalBar, pie, line, doughnut, radar, polarArea
+
+            data: {
+                labels: {{labels|safe}},
+                datasets: [{
+                    label: "Revenue",
+                    borderColor: "#005DAA",
+                    data: {{data|safe}},
+                    backgroundColor: "#FFD200"
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Financial Health',
+                },
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000'
+                    }
+                }
+
+            }
+
+
+        });
+
+    </script>
 
 {% endblock %}

@@ -97,7 +97,12 @@ def form(request):
                     'status': 'Projected daily loss:',
                     'profit': '${}'.format(abs(profit)),
                     'message': 'You are projected to make a loss. At current rates, your business can only operate for {} more days.'.format(days_left),
-                    'recommendation': ''
+                    'recommendation': '',
+                    'title': 'Financial Health',
+                    'labels': ['12/4/2016', '12/5/2016', '12/5/2016', '12/7/2016', '12/8/2016', '12/9/2016',
+                               '12/10/2016', '12/11/2016', '12/12/2016', '12/13/2016'],
+                    'data': [1151.1151, 1117.4534, 1117.4534, 1161.706138, 1210.953996, 1185.783088, 1131.525112,
+                             1122.15256, 1522.685036, 1269.59994],
                 }
             )
 
