@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="container pt-5">
+        <div class="row">
+
+        <h1>Prediction Results</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Lease</th>
+                <th scope="col">Utilities</th>
+                <th scope="col">Product</th>
+                <th scope="col">Assets</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in dataset %}
+                    <tr>
+                    <th scope="row">{{ data.id }}</th>
+                    <td>{{ data.Revenue }}</td>
+                    <td>{{ data.Cost }}</td>
+                    <td>{{ data.Lease }}</td>
+                    <td>{{ data.Utilities }}</td>
+                    <td>{{ data.Product }}</td>
+                    <td>{{ data.Assets }}</td>
+                    <td>{{ data.analyzedResult }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

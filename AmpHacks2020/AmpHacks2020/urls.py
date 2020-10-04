@@ -29,4 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', views.signup, name='signup'),
     path('form/', views.form, name='form'),
+    # was forms/
+    path('form/test', views.analyze_form, name='submit_form'),
+    path('results/', views.view_results, name='results'),
 ]
