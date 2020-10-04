@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-
+from . import script
 
 def home(request):
     """Renders the home page."""
@@ -68,6 +68,13 @@ def form(request):
 
     if request.method == 'POST':
         print('post')
+        revenue = request.POST.get("revenue_field")
+        date = request.POST.get("date_field")
+        hours = request.POST.get("hours_field")
+        salary = request.POST.get("salary_field")
+        cost = request.POST.get("cost_field")
+        units = request.POST.get("units_field")
+
 
     return render(
         request,
