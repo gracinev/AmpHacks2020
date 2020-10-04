@@ -61,6 +61,7 @@
     <Content Include="app\static\app\assets\pattern1.svg" />
     <Content Include="app\static\app\assets\pattern2.svg" />
     <Content Include="app\static\app\content\styles.css" />
+    <Content Include="app\templates\app\financialhealth.html" />
     <Content Include="app\templates\app\form.html" />
     <Content Include="app\templates\app\signup.html" />
     <Content Include="requirements.txt" />

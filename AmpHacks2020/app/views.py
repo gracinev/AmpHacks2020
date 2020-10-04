@@ -68,3 +68,13 @@ def form(request):
             'year':datetime.now().year,
         }
     )
+def financialhealth(request):
+    return render(
+        request,
+        "app/financialhealth.html",
+        {
+            'labels': ['F', 'M'],
+            'data': [52, 82],
+            'colors': ["#FF4136", "#0074D9"]
+        }
+    )
