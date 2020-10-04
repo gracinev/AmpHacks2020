@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-import pandas as pd
+#import pandas as pd
 import math
 from . import script
 
@@ -92,13 +92,14 @@ def form(request):
             days_left = math.ceil(5000/abs(profit))
             return render(
                 request,
-                'app/results.html',
+                'app/form.html',
                 {
+                    
+                    'title': 'Financial Health',
                     'status': 'Projected daily loss:',
                     'profit': '${}'.format(abs(profit)),
                     'message': 'You are projected to make a loss. At current rates, your business can only operate for {} more days.'.format(days_left),
                     'recommendation': '',
-                    'title': 'Financial Health',
                     'labels': ['12/4/2016', '12/5/2016', '12/5/2016', '12/7/2016', '12/8/2016', '12/9/2016',
                                '12/10/2016', '12/11/2016', '12/12/2016', '12/13/2016'],
                     'data': [1151.1151, 1117.4534, 1117.4534, 1161.706138, 1210.953996, 1185.783088, 1131.525112,
@@ -108,8 +109,9 @@ def form(request):
 
         return render(
             request,
-            'app/results.html',
+            'app/form.html',
             {
+                'title': 'Financial Health',
                 'status': 'Projected daily profit:',
                 'profit': '${}'.format(abs(profit)),
                 'message': 'You are projected to continue making profits.'
