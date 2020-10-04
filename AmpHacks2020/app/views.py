@@ -5,9 +5,6 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from django.http import JsonResponse
-
-from .models import PredResults
 
 from .forms import DataForm
 
@@ -63,32 +60,14 @@ def signup(request):
 
 def form(request):
     assert isinstance(request, HttpRequest)
+    Revenue = request.POST.get('Revenue')
+    Cost = request.POST.get('Cost')
+    Lease = request.POST.get('Lease')
+    Product = request.POST.get('Product')
+    Assets = request.POST.get('Assets')
+    Utilities = request.POST.get('Utilities')
     form_class = DataForm()
     dataform = DataForm()
-    return render(request, 'app/form.html', {'form': dataform, })
-
-
-def analyze_form(request):
-    if request.POST.get('action') == 'post':
-        Revenue = float(request.POST.get('Revenue'))
-        Cost = float(request.POST.get('Cost'))
-        Lease = float(request.POST.get('Lease'))
-        Product = float(request.POST.get('Product'))
-        Utilities = float(request.POST.get('Utilities'))
-        Assets = float(request.POST.get('Assets'))
-
-        #path to model here
-        model = pd.read_pickle()
-
-        # variables from fields put through the model
-        result = model.predict([[Revenue, Cost, Lease, Utilities, Product, Assets]])
-
-        analyzedResult = result[0]
-
-        return JsonResponse({'result': analyzedResult, "Revenue": Revenue, "Cost": Cost, "Lease": Lease, "Utilities": Utilities, "Product": Product, "Assets": Assets}, safe=False)
-
-
-def view_results(request):
-    # Submit prediction and show all
-    data = {"dataset": PredResults.objects.all()}
-    return render(request, "results.html", data)
+    return render(request, 'app/form.html', {'form': dataform, 'Revenue': Revenue, 'Cost': Cost,
+                                             'Lease': Lease, 'Product': Product, 'Assets': Assets,
+                                             'Utilities': Utilities, })

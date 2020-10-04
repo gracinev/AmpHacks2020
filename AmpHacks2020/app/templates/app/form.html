@@ -1,108 +1,53 @@
-﻿{% extends "app/base.html" %}
+﻿{% extends "app/layout.html" %}
 
 {% block content %}
 
 <h2>Input you values here</h2>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Prediction Results</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h5>Prediction Input:</h5>
-                <div>Reveune: <span id="rev"></span></div>
-                <div>Cost: <span id="cost"></span></div>
-                <div>Lease: <span id="lease"></span></div>
-                <div>Utilities: <span id="util"></span></div>
-                <div>Product: <span id="prod"></span></div>
-                <div>Assets: <span id="assets"></span></div>
-                <h5 class="pt-3">Prediction Classification:</h5>
-                <div id="form"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary" href="/results" role="button">View DB</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+<!--<h3>{{ message }}</h3>-->
 
 <div class="container pt-5">
     <div class="row justify-content-md-center">
         <div class="col-md-4">
-        <form action="" id="post-form">
+<!--        <form action="" id="post-form">-->
+            <form method="post" id="post-form">
             {% csrf_token %}
             <div class="form-group">
                 <label for="Revenue">Revenue</label>
-                <input type="number" class="form-control" id="Revenue" placeholder="Revenue Field" required>
+                <input type="number" class="form-control" id="Revenue" placeholder="Revenue Field" required name="Revenue">
             </div>
             <div class="form-group">
                 <label for="Cost">Cost</label>
-                <input type="number" class="form-control" id="Cost" placeholder="Revenue Field" required>
+                <input type="number" class="form-control" id="Cost" placeholder="Revenue Field" required name="Cost">
             </div>
             <div class="form-group">
                 <label for="Lease">Lease</label>
-                <input type="number" class="form-control" id="Lease" placeholder="Revenue Field" required>
+                <input type="number" class="form-control" id="Lease" placeholder="Revenue Field" required name="Lease">
             </div>
             <div class="form-group">
                 <label for="Utilities">Utilities</label>
-                <input type="number" class="form-control" id="Utilities" placeholder="Revenue Field" required>
+                <input type="number" class="form-control" id="Utilities" placeholder="Revenue Field" required name="Utilities">
             </div>
             <div class="form-group">
                 <label for="Product">Product</label>
-                <input type="number" class="form-control" id="Product" placeholder="Revenue Field" required>
+                <input type="number" class="form-control" id="Product" placeholder="Revenue Field" required name="Product">
             </div>
             <div class="form-group">
                 <label for="Assets">Assets</label>
-                <input type="number" class="form-control" id="Assets" placeholder="Revenue Field" required>
+                <input type="number" class="form-control" id="Assets" placeholder="Revenue Field" required name="Assets">
             </div>
             <button type="submit" value="Submit" class="btn btn-primary">Analyze</button>
         </form>
+            <h5>Revenue: {{ Revenue }} </h5>
+            <h5>Cost: {{ Cost }} </h5>
+            <h5>Lease: {{ Lease }} </h5>
+            <h5>Utilities: {{ Utilities}} </h5>
+            <h5>Product: {{ Product }} </h5>
+            <h5>Assets: {{ Assets }} </h5>
         </div>
     </div>
 </div>
 
-<script>
-        $(document).on('submit', '#post-form',function(e){
-            e.preventDefault();
-            $.ajax({
-                type:'POST',
-                url:'{% url "form:submit_form" %}',
-                data:{
-                    sepal_length:$('#Revnue').val(),
-                    sepal_width:$('#Cost').val(),
-                    petal_length:$('#Lease').val(),
-                    petal_width:$('#Utilities').val(),
-                    petal_width:$('#Product').val(),
-                    petal_width:$('#Assets').val(),
-                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
-                    action: 'post'
-                },
-                success:function(json) {
-                    document.forms["post-form"].reset();
-                    document.getElementById("prediction").innerHTML = json['result']
-                    document.getElementById("rev").innerHTML = json['Revenue']
-                    document.getElementById("cost").innerHTML = json['Cost']
-                    document.getElementById("lease").innerHTML = json['Lease']
-                    document.getElementById("util").innerHTML = json['Utilities']
-                    document.getElementById("prod").innerHTML = json['Product']
-                    document.getElementById("assets").innerHTML = json['Assets']
-                },
-                error : function(xhr,errmsg,err) {
 
-                }
-        });
-    })
-
-</script>
 
 
 <!--<body>-->
