@@ -93,8 +93,7 @@ z-index: -5;
         <img id="pattern2" src="{% static 'app/assets/pattern2.svg' %}" />
     </div>
     <div class="formDiv col-10">
-        <form style="padding: 80px;">
-        <form action="" id = "post-form" method="POST">
+        <form  style="padding: 80px;" action="" id = "post-form" method="POST">
         {% csrf_token %}
             <div class="form-group">
                 <label class="formText">Revenue</label>
